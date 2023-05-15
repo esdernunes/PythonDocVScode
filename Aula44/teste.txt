@@ -1,0 +1,2 @@
+Curso de Python!
+ Aula com escrita em arquivo
