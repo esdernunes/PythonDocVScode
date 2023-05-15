@@ -75,4 +75,27 @@ vsql="UPDATE tb_contatos SET  T_NOMECONTATO='"+nome+"',T_TELEFONECONTATO='"+tele
 Atualizar(vcon,vsql)
 
 
+#consulta
+def Consulta(conexao,sql):
+        c=conexao.cursor()
+        c.execute(sql)
+        resultado=c.fetchall()
+        return resultado
+    
+        print("Registro atualizado")
+        
+#mostra o resultado de varios contato
+vsql="SELECT * FROM tb_contatos"
+res=Consulta(vcon,vsql)
+for i in res:
+    print(res)
+
+#mostra o resultado de um contato
+vsql="SELECT * FROM tb_contatos WHERE N_IDCONTATO=2"
+res=Consulta(vcon,vsql)
+for i in res:
+    print(res)
+    
+    
+
 vcon.close()
